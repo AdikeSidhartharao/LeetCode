@@ -1,0 +1,11 @@
+from collections import OrderedDict
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        char_counts = OrderedDict()
+        for char in s:
+            char_counts[char] = char_counts.get(char,0)+1
+        for i,  char in enumerate(s):
+            if char_counts[char]==1:
+                return i
+        return -1
+        
